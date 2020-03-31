@@ -1,0 +1,1 @@
+!function(){function n(){e.style.zIndex="auto",e.style.zIndex=""}var e=document.getElementsByTagName("h1")[0];["DOMContentLoaded","resize","orientationchange"].forEach(function(e){window.addEventListener(e,n)})}();
