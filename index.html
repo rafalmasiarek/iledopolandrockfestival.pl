@@ -8,12 +8,19 @@
         <meta name="Keywords" content="woodstock, licznik, ile, do, woodstocku, zostało, odliczanie, przystanek woodstock, przystanek, polandrock, polandrockfestival, PolAndRock, festiwal, festival">
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
+        <link href="assets/mourn.css" rel="stylesheet">
         <link href="assets/style.css" rel="stylesheet">
     </head>
     <body>
 <h2>Do 26. Pol'<strong>and</strong>'Rock zostało:</h2>
 <h1 id="countdown"></h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="assets/mourn.min.js"></script>
 <script src="assets/script.js"></script>
-<script>var countDownDate = new Date("July 30, 2020 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}</script>
+<script>var countDownDate = new Date("July 29, 2021 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}
+$(document).ready(function(){
+  $.mourn();
+});
+</script>
     </body>
 </html>
