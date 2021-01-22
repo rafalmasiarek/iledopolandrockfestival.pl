@@ -47,6 +47,9 @@ body {
   min-height: 100%;
   display: flex;
   flex-flow: column nowrap;
+  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 
@@ -54,6 +57,39 @@ body {
 html,body{height:100%;}
 html{display:table;width:100%;}
 body{display:table-cell;vertical-align:middle;text-align:center;}
+
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+  display: none;
+}
+
+footer {
+	width: 100vw;
+	height: 1em;
+	background: #f6c8a2;
+	padding: .7rem 0px;
+}
+
+footer:active {
+	bottom: 0;
+}
+
+#dev-block {
+	font-size: .6rem;
+	padding: 4px 5px;
+	border-radius: 4px;
+}
+
+#dev-block .branch {
+	background-color: #af3517;
+}
+
+#dev-block .version,
+#dev-block .build {
+	background-color: #f1e7e7;
+	color: #1b0c0c;
+}
 
 @font-face {
   font-family: Anchor;
