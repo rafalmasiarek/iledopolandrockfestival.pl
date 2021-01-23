@@ -5,8 +5,8 @@ pages:
   script:
     - mkdir .public
     - cp -r * .public/
-    - sed -i "s/%PROJECT_URL%/$PROJECT_URL/g" ./.public/index.html
-    - sed -i "s/%PROJECT_NAME%/$PROJECT_NAME/g" ./.public/index.html
+    - sed -i "s#%PROJECT_URL%#$PROJECT_URL#g" ./.public/index.html
+    - sed -i "s#%PROJECT_NAME%#$PROJECT_NAME#g" ./.public/index.html
     - printf '{"branch":"%s","build":"%s"}\n' "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" "$CI_JOB_ID" > ./.public/.build-data.json
     - mv .public public
   artifacts:
