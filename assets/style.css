@@ -21,8 +21,6 @@ html, body {
     padding: 0;
     height: 100vh;
     width: 100%;
-    text-transform: uppercase;
-
 }
 
 header {
@@ -45,15 +43,10 @@ a,
 a:visited {
   color: #774b27;
   text-decoration: none;
-  text-transform: lowercase;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-i#festival-name {
-  text-transform: none
 }
 
 i#festival-name strong {
@@ -63,7 +56,6 @@ i#festival-name strong {
 
 i#countdown {
   font-family: 'Open Sans', sans-serif;
-  text-transform: lowercase;
 }
 
 
