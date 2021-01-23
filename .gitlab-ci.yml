@@ -16,8 +16,8 @@ pages:
   artifacts:
     paths:
     - public
-  only:
-  - master
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
 
 flushcache:
   stage: flushcache
@@ -28,5 +28,5 @@ flushcache:
       curl --fail --output "/dev/null" --silent --show-error -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" \
       -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
       --data '{"purge_everything":true}'
-  only:
-  - master
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
