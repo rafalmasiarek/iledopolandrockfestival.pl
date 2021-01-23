@@ -24,10 +24,10 @@
         <script src="https://kit.fontawesome.com/cc759ba0dc.js" crossorigin="anonymous"></script>
         <script src="assets/script.js"></script>
         <script>
-$.getJSON("build-data.json", function (data) {
-    $('#version.branch').append(data.branch);
-    $('#version.build').append(data.build);    
-});
+            $.getJSON(".build-data.json", function (data) {
+                $('#version.branch').append(data.branch);
+                $('#version.build').append(data.build);    
+            });
         </script>
         <script>var countDownDate = new Date("July 29, 2021 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}</script>
     </body>
