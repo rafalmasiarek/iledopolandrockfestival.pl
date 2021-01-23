@@ -5,6 +5,7 @@ pages:
   script:
     - mkdir .public
     - cp -r * .public/
+    - printf '{"branch":"%s","build":"%s"}\n' "$CI_COMMIT_REF_NAME" "CI_JOB_ID" > ./.public/.build-data.json
     - mv .public public
   artifacts:
     paths:
