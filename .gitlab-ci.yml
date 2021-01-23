@@ -1,5 +1,9 @@
 image: alpine:latest
 
+stages:
+    - deploy
+    - flushcache
+
 pages:
   stage: deploy
   script:
@@ -7,10 +11,22 @@ pages:
     - cp -r * .public/
     - sed -i "s#%PROJECT_URL%#$PROJECT_URL#g" ./.public/index.html
     - sed -i "s#%PROJECT_NAME%#$PROJECT_NAME#g" ./.public/index.html
-    - printf '{"branch":"%s","build":"%s"}\n' "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" "$CI_JOB_ID" > ./.public/.build-data.json
+    - printf '{"branch":"%s","build":"%s","credentials":"%s"}\n' "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" "$CI_JOB_ID" "CI_MERGE_REQUEST_ASSIGNEES" > ./.public/.build-data.json
     - mv .public public
   artifacts:
     paths:
     - public
-  only:
-  - master
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+
+flushcache:
+  stage: flushcache
+  before_script:
+      - apk add --update curl && rm -rf /var/cache/apk/*
+  script:
+  - |
+      curl --show-error -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" \
+      -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" \
+      --data '{"purge_everything":true}'
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
