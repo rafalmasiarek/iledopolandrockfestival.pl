@@ -15,13 +15,14 @@
     </head>
     <body>
         <header>
-            <p id="em1"><span id="em2">do zobaczenia za rok!</span><br>Jak tylko poznamy datę 28. edycji festiwalu Pol'And'Rock zaczniemy odliczanie :)</p>   
+            <h1>do <i id="festival-name">28. Pol'<strong>and</strong>'Rock</i> zostało:<br>
+                <i id="countdown"></i></h1>
         </header>
-        <footer>
+        <!--footer>
             <a href="%PROJECT_URL%">%PROJECT_NAME%</a>
             <span id='version' class="branch"><i class="fas fa-code-branch"></i></span>
             <span id='version' class="build"><i class="fas fa-cogs"></i></span>
-        </footer>
+        </footer-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/cc759ba0dc.js" crossorigin="anonymous"></script>
         <script src="assets/script.js"></script>
@@ -31,6 +32,6 @@
                 $('#version.build').append(data.build);    
             });
         </script>
-        <script>var countDownDate = new Date("July 29, 2021 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}</script>
+        <script>var countDownDate = new Date("Aug 04, 2022 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}</script>
     </body>
 </html>
