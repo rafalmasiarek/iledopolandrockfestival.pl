@@ -9,25 +9,22 @@
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
         <link href="assets/style.css" rel="stylesheet">
-        <style>
-            #em1, #em2 { font-size: 1.5em; }
-        </style>
     </head>
     <body>
         <header>
             <h1>do <i id="festival-name">28. Pol'<strong>and</strong>'Rock</i> zostało:<br>
                 <i id="countdown"></i></h1>
         </header>
-        <!--footer>
-            <a href="%PROJECT_URL%">%PROJECT_NAME%</a>
+        <footer>
+            <a href="https://github.com/rafalmasiarek/iledopolandrockfestival.pl"><i class="fa-brands fa-github"></i>rafalmasiarek/iledopolandrockfestival.pl</a>
             <span id='version' class="branch"><i class="fas fa-code-branch"></i></span>
             <span id='version' class="build"><i class="fas fa-cogs"></i></span>
-        </footer-->
+        </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/cc759ba0dc.js" crossorigin="anonymous"></script>
         <script src="assets/script.js"></script>
         <script>
-            $.getJSON(".build-data.json", function (data) {
+            $.getJSON("project.json", function (data) {
                 $('#version.branch').append(data.branch);
                 $('#version.build').append(data.build);    
             });
