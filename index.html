@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Ile zostało do 27. Pol'and'Rock Festival?</title>
+        <title>Ile zostało do 28. Pol'and'Rock Festival?</title>
         <link rel="icon" type="image/png" href="https://polandrockfestival.pl/icons/favicon-32x32.png" sizes="32x32">
         <meta charset="utf-8">
         <meta name="Description" content="Licznik który wskazuje ile musimy jeszcze czekać do festiwalu PolAndRock (dawniej Przystanek Woodstock) czyli najpiękniejszego festiwalu na Świecie!">
@@ -12,14 +12,14 @@
     </head>
     <body>
         <header>
-            <h1>do <i id="festival-name">27. Pol'<strong>and</strong>'Rock</i> zostało:<br>
+            <h1>do <i id="festival-name">28. Pol'<strong>and</strong>'Rock</i> zostało:<br>
                 <i id="countdown"></i></h1>
         </header>
-        <footer>
+        <!--footer>
             <a href="%PROJECT_URL%">%PROJECT_NAME%</a>
             <span id='version' class="branch"><i class="fas fa-code-branch"></i></span>
             <span id='version' class="build"><i class="fas fa-cogs"></i></span>
-        </footer>
+        </footer-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/cc759ba0dc.js" crossorigin="anonymous"></script>
         <script src="assets/script.js"></script>
@@ -29,6 +29,6 @@
                 $('#version.build').append(data.build);    
             });
         </script>
-        <script>var countDownDate = new Date("July 29, 2021 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}</script>
+        <script>var countDownDate = new Date("Aug 04, 2022 15:00:00").getTime();var x=setInterval(HowMuchDoIHaveToWait,1e3);function HowMuchDoIHaveToWait(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),a=Math.floor(o%864e5/36e5),n=Math.floor(o%36e5/6e4),r=Math.floor(o%6e4/1e3);document.getElementById("countdown").innerHTML=t+"d   "+a+"h   "+n+"m   "+r+"s "}</script>
     </body>
 </html>
