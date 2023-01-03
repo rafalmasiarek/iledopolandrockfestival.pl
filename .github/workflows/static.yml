@@ -34,13 +34,12 @@ jobs:
         uses: jsdaniell/create-json@v1.2.2
         with:
           name: "project.json"
-          json: '{ "repo_name": ${{ github.repository }}, "repo_url": "${{ github.server_url }}/${{ github.repository }}", "branch": ${{ github.ref_name }}, "build": ${{ github.run_id }} }'
+          json: '{ "repo_name": "${{ github.repository }}", "repo_url": "${{ github.server_url }}/${{ github.repository }}", "branch": "${{ github.ref_name }}", "build": ${{ github.run_id }} , "build_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" }'
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
