@@ -34,7 +34,7 @@ jobs:
         uses: jsdaniell/create-json@v1.2.2
         with:
           name: "project.json"
-          json: '{"branch":$GITHUB_REF_NAME, "build":$GITHUB_JOB}'
+          json: '{ "repo_name": ${{ github.repository }}, "repo_url": "${{ github.server_url }}/${{ github.repository }}", "branch": ${{ github.ref_name }}, "build": ${{ github.run_id }} }'
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
